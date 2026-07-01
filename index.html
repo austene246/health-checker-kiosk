@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biometrics System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="dot"></span>
+                <h2>KUREI'S BMI System</h2>
+            </div>
+            
+            <form id="bmiForm" novalidate>
+                <div class="field">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required placeholder="Please input your name">
+                </div>
+                
+                <div class="row">
+                    <div class="field">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" min="1" max="120" required placeholder="Yrs">
+                    </div>
+                    <div class="field">
+                        <label for="sex">Sex</label>
+                        <select id="sex" required>
+                            <option value="" disabled selected hidden>-</option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field">
+                        <label for="weight">Mass (kg)</label>
+                        <input type="number" id="weight" min="1" step="0.1" required placeholder="0.0">
+                    </div>
+                    <div class="field">
+                        <label for="height">Height (cm)</label>
+                        <input type="number" id="height" min="1" step="0.1" required placeholder="000">
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn">Execute Run</button>
+            </form>
+        </aside>
+
+        <main class="workspace">
+            <div id="displayStateDefault" class="placeholder-msg">
+                <p> Please input the following the show your data.</p>
+            </div>
+            <div id="displayStateActive" class="display-panel hidden"></div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
